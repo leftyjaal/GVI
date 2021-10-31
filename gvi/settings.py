@@ -15,7 +15,7 @@ SECRET_KEY = 'django-insecure-^4j9lisr66)&f#q6f#q_$bbu@pvvm+^5np&mz5%!%tpik^lo@c
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['18.219.75.111','127.0.0.1']
+ALLOWED_HOSTS = ['3.144.73.113','127.0.0.1']
 
 
 # Application definition
@@ -38,7 +38,12 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
 ]
+
+CORS_ORIGIN_ALLOW_ALL = True
+
+CORS_ORIGIN_WHITELIST = ('https://master.d3pbkj0qi7r6oc.amplifyapp.com/',)
 
 ROOT_URLCONF = 'gvi.urls'
 
