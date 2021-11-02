@@ -13,11 +13,10 @@ def download(folder):
     img_dir_list = []
 
     # if not os.path.exists(f"renderer/requests/{folder}"):
-    if not os.path.exists(f"renderer/requests/{folder}"):
+    if not os.path.exists(f"requests/{folder}"):
         print("Directory created")
-
-        # os.mkdir(f"requests/{folder}")
-        os.mkdir(f"renderer/requests/{folder}")
+        os.mkdir(f"requests/{folder}")
+        # os.mkdir(f"renderer/requests/{folder}")
 
     else:
         print("Directory already exists")
@@ -28,15 +27,11 @@ def download(folder):
         if my_bucket_object.key != f"{folder}/":
             serial = serial + 1
 
-            # my_bucket.download_file(my_bucket_object.key, f"requests/{folder}/{serial}.jpg")
-            my_bucket.download_file(my_bucket_object.key, f"renderer/requests/{folder}/{serial}.jpg")
+            my_bucket.download_file(my_bucket_object.key, f"requests/{folder}/{serial}.jpg")
+            # my_bucket.download_file(my_bucket_object.key, f"renderer/requests/{folder}/{serial}.jpg")
 
-            # img_dir_list.append(f"requests/{folder}/{serial}.jpg")
-            img_dir_list.append(f"renderer/requests/{folder}/{serial}.jpg")
+            img_dir_list.append(f"requests/{folder}/{serial}.jpg")
+            # img_dir_list.append(f"renderer/requests/{folder}/{serial}.jpg")
 
-    print(f"Files downloaded at request/{folder}")
+    print(f"Finished. Files downloaded at request/{folder}")
     return img_dir_list
-
-
-if __name__ == '__main__':
-    download("2345")
