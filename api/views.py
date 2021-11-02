@@ -37,7 +37,6 @@ class ApiView(View):
         position=json.loads(request.body)["position"]
         music=json.loads(request.body)["music"]
         
-        time.sleep(60)
         print("Acabaron los 60 segundos")
         print("Iniciando descarga")
         download(id)
@@ -45,7 +44,7 @@ class ApiView(View):
         img_processing(f"requests/{id}/")
         #class_list = classifier_main(f"requests/{id}/")
         #render(class_list,id)
-        upload(id)
+        upload()
         
         send_mail(
             f"Tu video generado en GVI está listo",
