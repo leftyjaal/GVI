@@ -37,8 +37,8 @@ class ApiView(View):
         music=json.loads(request.body)["music"]
         
         download(id)
-        img_processing(f"requests/{id}/")
-        class_list = classifier_main(f"requests/{id}/")
+        #img_processing(f"requests/{id}/")
+        #class_list = classifier_main(f"requests/{id}/")
         render(class_list,id)
         upload(id)
         
