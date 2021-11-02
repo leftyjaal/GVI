@@ -11,6 +11,12 @@ from django.core.mail import send_mail
 from apps.test import test
 import json
 
+from downloader import download
+from classifier import classifier_main
+from img_processor import img_processing
+from img_renderer import render
+from uploader import upload
+
 # Create your views here.
 # def apiView(request):
 # return HttpResponse('URL API')
@@ -23,12 +29,18 @@ class ApiView(View):
         return super().dispatch(request, *args, **kwargs)
     
     def post(self, request, *args, **kwargs):
-
+        
         id=json.loads(request.body)["id"]
         name=json.loads(request.body)["name"]
         email=json.loads(request.body)["email"]
         position=json.loads(request.body)["position"]
         music=json.loads(request.body)["music"]
+        
+        download(id)
+        img_processing(f"requests/{id}/")
+        class_list = classifier_main(f"requests/{id}/")
+        render(class_list,id)
+        upload(id)
         
         send_mail(
             f"Tu video generado en GVI está listo",
