@@ -10,6 +10,7 @@ from django.conf import settings
 from django.core.mail import send_mail
 from apps.test import test
 import json
+import time
 
 from downloader import download
 from classifier import classifier_main
@@ -36,7 +37,11 @@ class ApiView(View):
         position=json.loads(request.body)["position"]
         music=json.loads(request.body)["music"]
         
+        time.sleep(60)
+        print("Acabaron los 60 segundos")
+        print("Iniciando descarga")
         download(id)
+        
         img_processing(f"requests/{id}/")
         #class_list = classifier_main(f"requests/{id}/")
         #render(class_list,id)
