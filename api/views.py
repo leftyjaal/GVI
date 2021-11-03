@@ -53,9 +53,9 @@ def rendeView(datos):
         download(id)
         
         img_processing(f"requests/{id}/")
-        #class_list = classifier_main(f"requests/{id}/")
-        #render(class_list, id)
-        #upload(id)
+        class_list = classifier_main(f"requests/{id}/")
+        render(class_list, id)
+        upload(id)
         
         send_mail(
             f"Tu video generado en GVI está listo",
