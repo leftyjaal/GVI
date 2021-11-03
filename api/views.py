@@ -10,7 +10,7 @@ from django.conf import settings
 from django.core.mail import send_mail
 from apps.test import test
 import json
-import time
+import asyncio
 
 from downloader import download
 from classifier import classifier_main
@@ -22,6 +22,8 @@ from uploader import upload
 # def apiView(request):
 # return HttpResponse('URL API')
 
+loop = asyncio.get_event_loop()
+
 class ApiView(View):
     
     @method_decorator(csrf_exempt)
@@ -31,20 +33,29 @@ class ApiView(View):
     
     def post(self, request, *args, **kwargs):
         
-        id=json.loads(request.body)["id"]
+        """id=json.loads(request.body)["id"]
         name=json.loads(request.body)["name"]
         email=json.loads(request.body)["email"]
         position=json.loads(request.body)["position"]
-        music=json.loads(request.body)["music"]
+        music=json.loads(request.body)["music"] """
+        datos = json.loads(request.body)
+        loop.run_in_executor(None,rendeView,datos)
+        return JsonResponse(json.loads(request.body))
+
+def rendeView(datos):
+    
+        id= datos["id"]
+        name= datos["name"]
+        email= datos["email"]
+        position= datos["position"]
+        music= datos["music"]
         
-        print("Acabaron los 60 segundos")
-        print("Iniciando descarga")
         download(id)
         
         img_processing(f"requests/{id}/")
-        class_list = classifier_main(f"requests/{id}/")
-        render(class_list, id)
-        upload(id)
+        #class_list = classifier_main(f"requests/{id}/")
+        #render(class_list, id)
+        #upload(id)
         
         send_mail(
             f"Tu video generado en GVI está listo",
@@ -53,5 +64,4 @@ class ApiView(View):
             [email],
             fail_silently=False
             )
-
-        return JsonResponse(json.loads(request.body))
+        
