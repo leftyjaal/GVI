@@ -11,6 +11,7 @@ from django.core.mail import send_mail
 from apps.test import test
 import json
 import asyncio
+import time
 
 from downloader import download
 from classifier import classifier_main
@@ -49,7 +50,9 @@ def rendeView(datos):
         email= datos["email"]
         position= datos["position"]
         music= datos["music"]
-        
+        print("Inicia Sleep")
+        time.sleep(120)
+        print("Termina Sleep")
         download(id)
         
         img_processing(f"requests/{id}/")
@@ -64,4 +67,3 @@ def rendeView(datos):
             [email],
             fail_silently=False
             )
-        
