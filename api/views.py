@@ -42,8 +42,8 @@ class ApiView(View):
         download(id)
         
         img_processing(f"requests/{id}/")
-        #class_list = classifier_main(f"requests/{id}/")
-        #render(class_list,id)
+        class_list = classifier_main(f"requests/{id}/")
+        render(class_list, id)
         upload(id)
         
         send_mail(
