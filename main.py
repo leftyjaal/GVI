@@ -10,7 +10,7 @@ from downloader import download
 from classifier import classifier_main
 from img_processor import img_processing
 from img_renderer import render
-
+from uploader import upload
 
 print(f"Tensorflow: {tf.__version__}")
 print(f"Keras:      {tensorflow.keras.__version__}")
@@ -32,5 +32,7 @@ if __name__ == '__main__':
     class_list = classifier_main(f"requests/{S3_folder}/")
     print("RENDER FUNCTION")
     render(class_list, S3_folder)
+    print("UPLOAD FUNCTION")
+    upload(S3_folder)
 
     print("main finish")
