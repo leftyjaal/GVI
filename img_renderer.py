@@ -10,7 +10,8 @@ def render(obj, folder):
     for item in obj:
         img_index.append(item.path)
 
-    # img_index.append("src/")
+    # img_index.append("src/drawing.jpg")
+    # img_index.append("src/drawing.jpg")
 
     clip = ImageSequenceClip(img_index, fps=1)
     clip.write_videofile(f"requests/{folder}/{folder}.mp4")
