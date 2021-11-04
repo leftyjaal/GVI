@@ -23,15 +23,17 @@ print(f"Moviepy:    {moviepy.__version__}")
 
 if __name__ == '__main__':
     S3_folder = "1234"
+    hori = "vertical"
+    musica = "feliz" # "Dia especial" "Instrumental" "Pop remix"
 
     print("DOWNLOAD FUNCTION")
     img_dir_list = download(S3_folder)
     print("IMG FUNCTION")
-    img_processing(f"requests/{S3_folder}/")
+    img_processing(f"requests/{S3_folder}/", hori)
     print("CLASS FUNCTION")
     class_list = classifier_main(f"requests/{S3_folder}/")
     print("RENDER FUNCTION")
-    render(class_list, S3_folder)
+    render(class_list, S3_folder, musica)
     print("UPLOAD FUNCTION")
     upload(S3_folder)
 

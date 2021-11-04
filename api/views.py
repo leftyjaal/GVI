@@ -43,21 +43,22 @@ class ApiView(View):
         loop.run_in_executor(None,rendeView,datos)
         return JsonResponse(json.loads(request.body))
 
+
 def rendeView(datos):
     
-        id= datos["id"]
-        name= datos["name"]
-        email= datos["email"]
-        position= datos["position"]
-        music= datos["music"]
+        id = datos["id"]
+        name = datos["name"]
+        email = datos["email"]
+        position = datos["position"]
+        music = datos["music"]
         print("Inicia Sleep")
         time.sleep(120)
         print("Termina Sleep")
         download(id)
         
-        img_processing(f"requests/{id}/")
+        img_processing(f"requests/{id}/", position)
         class_list = classifier_main(f"requests/{id}/")
-        render(class_list, id)
+        render(class_list, id, music)
         upload(id)
         
         send_mail(
