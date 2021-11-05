@@ -22,7 +22,7 @@ print(f"Moviepy:    {moviepy.__version__}")
 
 
 if __name__ == '__main__':
-    S3_folder = "1234"
+    S3_folder = "9814"
     hori = "vertical"
     musica = "feliz" # "Dia especial" "Instrumental" "Pop remix"
 
@@ -35,6 +35,6 @@ if __name__ == '__main__':
     print("RENDER FUNCTION")
     render(class_list, S3_folder, musica)
     print("UPLOAD FUNCTION")
-    upload(S3_folder)
+    # upload(S3_folder)
 
     print("main finish")

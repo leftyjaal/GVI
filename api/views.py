@@ -51,9 +51,9 @@ def rendeView(datos):
         email = datos["email"]
         position = datos["position"]
         music = datos["music"]
-        print("Inicia Sleep")
+        print("Verifing S3 files")
         time.sleep(120)
-        print("Termina Sleep")
+        print("files verified")
         download(id)
         
         img_processing(f"requests/{id}/", position)

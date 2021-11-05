@@ -26,9 +26,10 @@ def render(obj, folder, music):
 
     clip = ImageSequenceClip(img_index, fps=1)
 
-    clip.write_videofile(f"requests/{folder}/{folder}.mp4")
+    clip.write_videofile(f"requests/{folder}/{folder}x.mp4", threads=6)
+    clip.close()
 
-    videoclip = VideoFileClip(f"requests/{folder}/{folder}.mp4")
+    videoclip = VideoFileClip(f"requests/{folder}/{folder}x.mp4")
     video_len = videoclip.duration
 
     print(f"video len: {video_len}")
@@ -40,3 +41,9 @@ def render(obj, folder, music):
     new_audioclip = CompositeAudioClip([clipaudio])
     videoclip.audio = new_audioclip
     videoclip.write_videofile(f"requests/{folder}/{folder}.mp4")
+
+    videoclip.close()
+    new_audioclip.close()
+    audioclip.close()
+    videoclip.close()
+
