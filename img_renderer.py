@@ -11,9 +11,9 @@ def render(obj, folder, music):
     print(music)
     if music.upper() == "FELIZ" or music == "feliz":
         musica = "feliz.mp4"
-    if music.upper() == "DIA-ESPECIAL" or "dia-especial":
+    elif music.upper() == "DIA-ESPECIAL" or "dia-especial":
         musica = "especial.wav"
-    if music.upper() == "POP-REMIX" or "pop-remix":
+    elif music.upper() == "POP-REMIX" or "pop-remix":
         musica = "pop.wav"
     else:
         musica = "instrumental.mp4"
