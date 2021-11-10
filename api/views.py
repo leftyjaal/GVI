@@ -55,7 +55,7 @@ def rendeView(datos):
         time.sleep(120)
         print("files verified")
         download(id)
-        
+        print(music)
         img_processing(f"requests/{id}/", position)
         class_list = classifier_main(f"requests/{id}/")
         render(class_list, id, music)
