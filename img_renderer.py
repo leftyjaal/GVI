@@ -8,16 +8,17 @@ def render(obj, folder, music):
     musica = ""
     img_index = []
     video_len = 0
-    print(music)
-    if music.upper() == "FELIZ" or music == "feliz":
+    print(type(music))
+    print(music.upper())
+    if music == "feliz":
         musica = "feliz.mp4"
-    elif music.upper() == "DIA-ESPECIAL" or "dia-especial":
+    elif music == "dia-especial":
         musica = "especial.wav"
-    elif music.upper() == "POP-REMIX" or "pop-remix":
+    elif music == "pop-remix":
         musica = "pop.wav"
     else:
         musica = "instrumental.mp4"
-
+    print(musica)
     for item in obj:
         img_index.append(item.path)
 
