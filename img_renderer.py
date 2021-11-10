@@ -8,8 +8,8 @@ def render(obj, folder, music):
     musica = ""
     img_index = []
     video_len = 0
-    print(type(music))
-    print(music.upper())
+    # print(type(music))
+    # print(music.upper())
     if music == "feliz":
         musica = "feliz.mp4"
     elif music == "dia-especial":
@@ -18,7 +18,8 @@ def render(obj, folder, music):
         musica = "pop.wav"
     else:
         musica = "instrumental.mp4"
-    print(musica)
+
+    # print(musica)
     for item in obj:
         img_index.append(item.path)
 
