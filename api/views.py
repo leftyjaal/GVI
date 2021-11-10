@@ -51,11 +51,13 @@ def rendeView(datos):
         email = datos["email"]
         position = datos["position"]
         music = datos["music"]
+
+        print(music)
         print("Verifing S3 files")
         time.sleep(120)
         print("files verified")
         download(id)
-        print(music)
+
         img_processing(f"requests/{id}/", position)
         class_list = classifier_main(f"requests/{id}/")
         render(class_list, id, music)
