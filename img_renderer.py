@@ -8,7 +8,7 @@ def render(obj, folder, music):
     musica = ""
     img_index = []
     video_len = 0
-
+    print(music)
     if music.upper() == "FELIZ" or music == "feliz":
         musica = "feliz.mp4"
     if music.upper() == "DIA-ESPECIAL" or "dia-especial":
