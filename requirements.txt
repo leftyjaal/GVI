@@ -41,7 +41,6 @@ numpy==1.19.5
 oauthlib @ file:///home/conda/feedstock_root/build_artifacts/oauthlib_1622563202229/work
 opencv-python==4.5.4.58
 opt-einsum @ file:///home/conda/feedstock_root/build_artifacts/opt_einsum_1617859230218/work
-Pillow==8.4.0
 proglog==0.1.9
 protobuf==3.15.8
 pyasn1==0.4.8
