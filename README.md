@@ -21,7 +21,7 @@ Building
 
 ## 4) Authors:
 ```
-- Alberto León - research assistant
-- Diego Osorio - SAP consultant
-- Jasmin Sánchez - Web developer
+- Alberto León - Research Assistant
+- Diego Osorio - IBM Intern
+- Jasmin Sánchez - IBM Intern
 ```
