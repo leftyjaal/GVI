@@ -1,4 +1,7 @@
 # Proyecto Modular: GVI 
+This is a preview beta of the proyect presented on 2021.
+This project its currently on hold cause team members
+This project could be developed and upgraded in future using better technologies
 
 ## Table of Contents
   * [1) News](#1-news)
