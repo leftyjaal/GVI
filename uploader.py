@@ -2,8 +2,8 @@ import boto3
 from boto3.session import Session
 import os
 
-IMG_BUCKET = 'gvi-images'
-VID_BUCKET = 'gvi-videos'
+IMG_BUCKET = 'NAME'
+VID_BUCKET = 'NAME'
 
 
 def upload(folder):
