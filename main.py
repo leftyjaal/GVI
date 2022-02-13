@@ -22,7 +22,7 @@ print(f"Moviepy:    {moviepy.__version__}")
 
 
 if __name__ == '__main__':
-    S3_folder = "9814"
+    S3_folder = "NAME"
     hori = "vertical"
     musica = "feliz" # "Dia especial" "Instrumental" "Pop remix"
 
