@@ -17,7 +17,7 @@ click @ file:///home/conda/feedstock_root/build_artifacts/click_1634002420260/wo
 cryptography @ file:///home/conda/feedstock_root/build_artifacts/cryptography_1635145246679/work
 dataclasses @ file:///home/conda/feedstock_root/build_artifacts/dataclasses_1628958434797/work
 decorator==4.4.2
-Django==3.2.8
+Django
 django-cors-headers==3.10.0
 flatbuffers @ file:///home/conda/feedstock_root/build_artifacts/python-flatbuffers_1617723079010/work
 gast==0.3.3
